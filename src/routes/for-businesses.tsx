@@ -1,0 +1,12 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowUpRight, Check } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { PageHeading, Benefits, JoinCta } from "@/components/site-sections";
+import { pageHead } from "@/lib/site-content";
+import communityPhoto from "@/assets/cafe-community.webp";
+
+export const Route = createFileRoute("/for-businesses")({ head: () => pageHead("For Businesses", "Discover how Foodsify plans to help independent restaurants, cafés, pubs and other hospitality businesses reach customers and earn referral income."), component: ForBusinesses });
+
+function ForBusinesses() {
+  return <><PageHeading eyebrow="For independent hospitality" title="Your business. A bigger community." description="You put everything into your business. Foodsify is building a network that gives independent hospitality businesses a new way to grow, together." /><section className="section-band"><div className="container-shell"><Benefits full /></div></section><section className="section-band bg-muted"><div className="container-shell grid items-center gap-12 md:grid-cols-2"><img src={communityPhoto} width="1448" height="1086" loading="lazy" alt="A café owner connecting with another independent business owner" className="aspect-[4/3] w-full rounded-md object-cover" /><div><p className="eyebrow mb-4">A place for your business</p><h2 className="section-title">Independent is what<br />brings us together.</h2><p className="section-copy mt-5">Restaurants, cafés, pubs, takeaways, bakeries, dessert shops and other independent hospitality businesses—all across the UK.</p><ul className="mt-6 space-y-4 text-sm">{["Connect with businesses locally and nationally", "Use the customer relationships you already have", "Help shape the founding network"].map(text => <li key={text} className="flex items-center gap-3"><Check size={18} />{text}</li>)}</ul><Button asChild variant="brand" size="lg" className="mt-8"><Link to="/contact">Become a founding member <ArrowUpRight /></Link></Button><p className="mt-4 text-xs leading-6 text-muted-foreground">Registration is coming soon. Founding-member pricing is being finalised.</p></div></div></section><JoinCta /></>;
+}

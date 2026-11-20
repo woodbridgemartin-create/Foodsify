@@ -1,0 +1,9 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { PageHeading, Steps, TechnologyNote, JoinCta } from "@/components/site-sections";
+import { pageHead } from "@/lib/site-content";
+
+export const Route = createFileRoute("/how-it-works")({ head: () => pageHead("How It Works", "Join, discover, promote and earn. Explore Foodsify’s planned referral network for independent hospitality businesses."), component: HowItWorks });
+
+function HowItWorks() {
+  return <><PageHeading eyebrow="The power of a recommendation" title="Good connections. Shared growth." description="A straightforward way for independent hospitality businesses to support one another—and create new opportunities along the way." /><section className="section-band"><div className="container-shell"><Steps /><TechnologyNote /></div></section><section className="section-band border-t border-border"><div className="container-shell intro-grid"><h2 className="section-title">Your recommendation.<br />Their new customer.<br />A shared opportunity.</h2><div><p className="section-copy">Imagine a café recommending a nearby independent restaurant to its regulars. A customer visits the restaurant and makes a qualifying purchase. In the planned Foodsify network, the café earns the agreed referral fee.</p><p className="section-copy mt-4">That’s the model we’re building: commercial incentives for businesses to help each other succeed. Referral eligibility, tracking, fees and payment arrangements will be confirmed before the network becomes operational.</p><p className="mt-5 text-sm text-muted-foreground">This is an illustration of the intended model, not a live referral or an actual result.</p></div></div></section><JoinCta /></>;
+}

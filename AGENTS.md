@@ -28,3 +28,9 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Website architecture
+- Use TanStack file routes with shared shell and reusable presentation sections; each content route owns its metadata so direct URLs and share previews remain distinct.
+- Keep launch content in browser-safe data modules with explicit status values; no network services are needed for this informational site.
+- Prerender every public content route and export only static public output for Cloudflare Pages, excluding Worker files; deployed pages must not need a server.
+- Keep photographs bundled and fonts locally packaged so exported pages do not rely on Lovable asset hosting.

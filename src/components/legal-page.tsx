@@ -1,0 +1,4 @@
+import { PageHeading } from "@/components/site-sections";
+export function LegalPage({ title, children }: { title: string; children: React.ReactNode }) {
+  return <><PageHeading eyebrow="The small print" title={title} description="Draft wording for the Foodsify informational pre-launch website." /><section className="section-band"><div className="container-shell legal-copy"><p className="border-l-2 border-primary bg-muted p-5 text-sm">Draft for review before launch. Last updated: 20 November 2026. These policies apply to this informational website, not to a live membership or referral platform.</p>{children}</div></section></>;
+}
